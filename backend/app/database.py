@@ -1,9 +1,11 @@
 from pymongo import MongoClient
-from app.config import MONGO_URI, DB_NAME
+from app.config import settings
 
-client = MongoClient(MONGO_URI)
-db = client[DB_NAME]
+client = MongoClient(settings.MONGO_URI)
 
+db = client[settings.DB_NAME]
+
+# Collections
 users = db["users"]
 exams = db["exams"]
 questions = db["questions"]
