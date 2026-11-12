@@ -1,35 +1,43 @@
-# AI Integrated Online Exam Platform
+# Secure Exam Portal
 
-A secure AI-powered online examination platform with coding tests, proctoring, analytics, and anti-cheat features.
+A PDF-based MCQ examination and review platform designed for GATE preparation.
 
-## Features
+## Product flow
 
-* Student & Examiner Portals
-* MCQ + Coding Exams
-* Java / Python / C++ Compiler
-* Webcam Proctoring
-* Fullscreen Lock
-* Extension Detection
-* Auto Evaluation
-* AI Question Generator
-* Resume-grade Full Stack Project
+1. Upload a question-paper PDF and its separate answer-key PDF.
+2. Extract questions, options, and answer mappings.
+3. Verify extracted questions and answer-key mappings before creating an exam.
+4. Configure a timed Practice Mode or Real Exam Mode.
+5. Attempt questions in a browser and submit the exam.
+6. Review the score and question-wise answers.
+7. Download the original question PDF annotated with correct and incorrect answers.
 
-## Tech Stack
+## Confirmed product decisions
 
-Frontend: React + Tailwind
-Backend: FastAPI (Python)
-Database: MongoDB
-Compiler Engine: Docker Sandbox
-Authentication: JWT
+- **Answer source:** separate answer-key PDF; verified mappings are the scoring source of truth.
+- **PDF output:** annotate a copy of the original question paper.
+- **Modes:** Practice Mode and Real Exam Mode.
 
-## Modules
+## Technology
 
-* Auth
-* Exams
-* Coding
-* Proctoring
-* Analytics
+- Frontend: React + Tailwind CSS
+- Backend: FastAPI (Python)
+- Database: MongoDB
+- Authentication: JWT
+- PDF processing: PyMuPDF; OCR fallback planned for scanned PDFs
 
-## Status
+## Repository structure
 
-Day 1 Setup Complete
+- `backend/app`: FastAPI application
+- `docs/PRODUCT_SPEC.md`: product requirements, workflows, API plan, and security requirements
+
+## Development status
+
+The product foundation is being migrated from a generic online-exam concept to a PDF-driven GATE practice workflow. PDF ingestion, verified answer-key mapping, timed attempts, evaluation, and annotated PDF generation are the MVP milestones.
+
+## Important safeguards
+
+- The answer-key PDF is the source of truth; AI must not decide correctness.
+- Answer mappings must be verified before an exam can be started.
+- Real Exam Mode must not expose answers before submission.
+- Never commit `.env` files or credentials. Rotate any credentials that were previously exposed.
