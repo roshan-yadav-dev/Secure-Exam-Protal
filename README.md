@@ -26,10 +26,23 @@ A PDF-based MCQ examination and review platform designed for GATE preparation.
 - Authentication: JWT
 - PDF processing: PyMuPDF; OCR fallback planned for scanned PDFs
 
+## Documentation
+
+Start with the [documentation index](docs/README.md). The docs cover:
+
+- [Product specification](docs/PRODUCT_SPEC.md)
+- [System architecture](docs/ARCHITECTURE.md)
+- [MongoDB data model](docs/DATA_MODEL.md)
+- [API reference](docs/API.md)
+- [Developer setup](docs/DEVELOPMENT.md)
+- [Learner user guide](docs/USER_GUIDE.md)
+- [Security and privacy](docs/SECURITY.md)
+- [Testing and deployment](docs/TESTING_DEPLOYMENT.md)
+
 ## Repository structure
 
 - `backend/app`: FastAPI application
-- `docs/PRODUCT_SPEC.md`: product requirements, workflows, API plan, and security requirements
+- `docs/`: product, architecture, API, data, developer, user, security, and operations documentation
 
 ## Development status
 
